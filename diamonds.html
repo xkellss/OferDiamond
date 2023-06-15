@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+		   <!--
+
+    second page  of Ofer Mizzrahi Diamonds
+    Author: Raquel Gonzalez
+    Date:   April 20th
+
+    Filename: Diamonds.html
+   -->
+
+	 <meta charset="utf-8" />
+	 <title> Ofer Mizrahi Diamonds </title>
+	 <link href="layout.css" rel="stylesheet" />
+     <link href="styles.css" rel="stylesheet" />
+     <link href="reset.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+    <script>
+    	function evalSlider()
+    	{
+    		var sliderValue = document.getElementById('rangebox').value; document.getElementById('sliderVal').innerHTML = sliderValue;
+    	}
+    
+    </script>
+
+
+
+</head>
+
+<body>
+
+ <header class="header">
+	<div class="middle">
+		 <img src="diamonds.png" alt="Diamonds" width="150" class="logo">
+	  <nav>
+		 <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="Diamonds.html">Diamonds</a></li>
+			<li><a href="Contact.html">Contact Us</a></li>
+		</ul>
+	  </nav>
+	</div>
+ </header>
+
+ <div class="mid">
+ 	<h1>Search our diamonds</h1>
+	<section class="gif">
+		<p>Fill out the information at the bottom on what kind of diamond you are interested in and one of our sellers will contact you shortly after to help you pick out the best diamond for you!</p>
+		<p>Required values are marked by an asterisk (*)</p>
+		<form id="question" action="info.php" method="post">
+			<fieldset id="Info">
+				<legend>Your Information</legend>
+		<div class="formRow">
+			<label for="name">Name*</label>
+			<input type="text" name="name" placeholder=" First and last name" id="name">
+		</div>
+
+		<div class="formRow">
+			<label for="street">Street Address</label>
+			<input type="text" name="street" id="street">
+		</div>
+
+		<div class="formRow">
+			<label for="city">City</label>
+			<input type="text" name="city" id="city">
+		</div>
+
+		<div class="formRow">
+			<label for="state">State</label>
+			<input type="text" name="state" placeholder="IL" id="state">
+		</div>
+
+		<div class="formRow">
+			<label for="zip">Postal Code</label>
+			<input type="text" name="zip" placeholder="nnnnn (-nnnn)" id="zip">
+		</div>
+
+		<div class="formRow">
+			<label for="phone">Phone Number*</label>
+			<input type="tel" name="phone" placeholder="(nnn) nnn-nnn" id="phone">
+		</div>
+
+		<div class="formRow">
+			<label for="mail">E-mail*</label>
+			<input type="email" name="mail" id="mail">
+		</div>
+
+         <div class="formRow">
+         	<label for="email">Add me to your mailing list for more information. </label>
+         	<input name="mail" id="email" value="yes" type="checkbox" />
+    	 </div>
+
+		<div class="formRow">
+			<input type="submit" name="Submit">
+		</div>
+			</fieldset>
+
+		<fieldset id="quality">
+			<legend>Tell us what kind of diamond you are looking for!</legend>
+
+			<div class="formRow">
+               <label for="visit">When do you need the diamond by?</label>
+               <input name="visitDate" id="visit" type="text" placeholder="MM/DD/YYYY" />
+            </div>
+
+            <div class="formRow">
+               <label for="shape">What type of cut?</label>
+               <select name="shapeType" id="shape">
+                  <option value="shape1">Cushion</option>
+                  <option value="shape2">Round</option>
+                  <option value="shape3" selected>Princess</option>
+                  <option value="shape4">Oval</option>
+                  <option value="shape5">Radiant</option>
+                  <option value="shape6">Marquise</option>
+               </select>
+              </div>
+
+            <div class="formRow">
+               <label for="carat">Carat size?</label>
+               <select name="caratType" id="carat">
+                  <option value="carat1">1/2ct</option>
+                  <option value="carat2">3/4ct</option>
+                  <option value="carat3" selected>1ct</option>
+                  <option value="carat4">1 1/2ct</option>
+                  <option value="carat5">2ct</option>
+                  <option value="carat6">3ct</option>
+               </select>
+              </div>
+
+
+
+            <div class="formRow">
+               <label>Certification?</label>
+               <fieldset class="Cert">
+                  <label for="name">AGS</label>
+                  <input name="certification" id="Cert" type="checkbox" /> 
+                 <label for="name">DGI</label>
+                <input type="checkbox"> 
+                <label for="name">EGL</label>
+                <input type="checkbox">
+                <label for="name">GIA</label>
+                <input type="checkbox" > <br>
+                <label for="name">IGL</label>
+                <input type="checkbox" >
+                <label for="name">HRD</label>
+                <input type="checkbox" >
+                <label for="name">NON</label>
+                <input type="checkbox" >
+                <label for="name">Select All Certifications</label>
+                <input type="checkbox" checked="checked">
+               </fieldset>
+            </div>
+
+
+             <div class="formRow">
+              	<label for="rangebox">Whats your price range?<br /></label>
+              	<fieldset class="price">
+         		$500 <input name="priceRange" id="rangebox" type="range" value="5" step="100" min="500" max="10000" onchange="evalSlider()"/>$10,000  <output id="sliderVal"></output>	
+         		</fieldset>
+             </div>
+
+            <label for="commBox">Tell us more specific information!</label>
+            <textarea name="custExp" id="commBox"></textarea>
+			<div class="formRow">
+			<input type="submit" name="Submit">
+			</div>
+		</fieldset>
+		</form>
+	</section>
+
+
+	<aside class="vid">
+		<p>Watch this video to know what kind of diamond you should get!</p> 
+         <video controls poster="di_GIA.png" >
+            <source src="GIA.mp4" type="video/mp4">
+            <track kind="captions" label="Diamond" src="Diamond" default />
+            <p><em>To play this video clip, your browser needs to support HTML5.</em></p>
+        </video>
+
+	</aside>
+	<aside class="vid">
+		<p>Click the play button to listen to Rihannas song, <cite>Diamonds!</cite></p>        
+         <audio controls>
+            <source src="Rihanna.mp3" type="audio/mp3"> 
+            <p><em>To play this audio clip, your browser needs to support HTML5.</em></p>     
+         </audio>
+	</aside>
+</div>
+
+	
+
+
+	<footer>
+		<h3>Location &amp; Hours</h3>
+         <p>29 E Madison St # 1116 <br />
+            Chicago, Il 60602<br />
+            (802) 555-0414 </p>
+         <p>Mon - Thu: 9 a.m. - 6 p.m.<br />
+            Sat - Sun: Closed</p>
+         <p> <a href="#"><img id="fbicon" src="fbicon.png" alt="" />Facebook</a>
+         	<a href="#"><img id="twittericon" src="twittericon.png" alt="" />Twitter</a>
+
+	</footer>
+
+</body>
+
+</html>
